@@ -1,0 +1,19 @@
+<div class="video-container-background">
+    
+    <video autoplay muted loop playsinline>
+        <source src="videos/video-login.mp4" type="video/mp4">
+    </video>
+</div>
+
+<form [formGroup]="loginForm" (ngSubmit)="Submit()" class="form-container">
+  <img src="/images/ford-logo.png" alt="ford-logo" id="ford-logo">
+  <div class="Label-Email">
+    <label for="InputEmail" class="form-label">Name</label>
+    <input  formControlName="name" class="form-control" id="InputEmail" placeholder="Username" required>
+  </div>
+  <div class="Label-Password">
+    <label for="InputPassword" class="form-label">Password</label>
+    <input formControlName="password" class="form-control" id="InputPassword" placeholder="Password" required>
+  </div>
+  <button type="submit" class="submit-button">Submit</button>
+</form>
