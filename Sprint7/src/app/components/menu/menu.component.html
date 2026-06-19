@@ -1,0 +1,16 @@
+<button class="menu-btn" (click)="toggleMenu()">
+  &#9776;
+</button>
+
+<nav class="sidebar" [class.active]="isMenuOpen">
+  <button class="close-btn" (click)="toggleMenu()">&times;</button>
+  
+  <ul class="menu-links">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Projetos</a></li>
+    <li><a href="#">Serviços</a></li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+</nav>
+
+<div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
