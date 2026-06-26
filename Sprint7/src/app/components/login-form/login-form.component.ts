@@ -14,23 +14,23 @@ export class LoginFormComponent {
 
   router = inject(Router)
   loginForm = new FormGroup({
-    name: new FormControl("", [Validators.required]),
-    password: new FormControl("", [Validators.required]),
+    nome: new FormControl("", [Validators.required]),
+   senha: new FormControl("", [Validators.required]),
   })
 
   Submit(){
-    const { name, password } = this.loginForm.value
+    const { nome, senha } = this.loginForm.value
 
-    if(!this.loginForm.valid || !name || !password){
+    if(!this.loginForm.valid || !nome || !senha){
       alert("Existem campos não preenchidos!")
       return
     }
 
-    this.loginService.login(name, password).subscribe({
+    this.loginService.login(nome, senha).subscribe({
       error: (err) => {
 
         if(err.status === 401){
-          alert("Name or Password incorrect!")
+          alert("nome ou senha incorrect!")
           return
         }
         alert("Inner Error! Try again later..")

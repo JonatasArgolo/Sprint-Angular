@@ -12,7 +12,7 @@ export class LoginService {
       .pipe(
         tap(
           (user) => {
-            sessionStorage.setItem("user", user.name)
+            sessionStorage.setItem("nome", user.nome)
           }
         )
       )

@@ -3,6 +3,12 @@ import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
     {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "login"
+       
+    },
+    {
         path: "login",
         pathMatch: "full",
         loadComponent: () => {
@@ -13,7 +19,7 @@ export const routes: Routes = [
     {
         path: "home",
         pathMatch: "full",
-        //canActivate: [loginGuard],
+        canActivate: [loginGuard],
         loadComponent: () => {
             return import("./pages/home/home.component").then(c => c.HomeComponent)
         }
