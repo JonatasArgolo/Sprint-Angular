@@ -1,0 +1,65 @@
+.welcome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; 
+}
+
+.welcome-box-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    position: relative;
+    padding: 10vh;
+    background-color: rgb(32, 32, 32); 
+    border-radius: 10px;
+}
+
+#welcome-tittle{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+#close-button-container {
+    position: absolute;
+    border-style: none;
+    padding: 5%;
+    width: 30%;
+    border-radius: 10px;
+    color: white;
+    background-color: #1351d8;
+    bottom: 15px;  
+    right: 15px;   
+}
+
+#close-button-container:hover {
+    background-color: #0d38a5;
+    cursor: pointer;          
+    transform: scale(1.05);   
+    transition: all 0.2s ease;
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 20px;   
+  right: 20px;    
+  background-color: #0d38a5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; 
+    cursor: pointer;
+}
