@@ -6,9 +6,10 @@
   <button class="close-btn" (click)="toggleMenu()">&times;</button>
   
   <ul class="menu-links">
-    <li><a href="#">Início</a></li>
-    <li><a href="#">Contato</a></li>
+    <li><a (click)="goToHome()">Home</a></li>
+    <li><a class="dashboard"(click)="goToDashboard()">Dashboard</a></li>
   </ul>
+  <button class="logout-btn" (click)="goToLogin()">Logout</button>
 </nav>
 
 <div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>

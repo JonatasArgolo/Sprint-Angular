@@ -17,6 +17,8 @@ body {
 }
 
 .sidebar {
+  display:flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
@@ -28,6 +30,7 @@ body {
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
   padding-top: 60px;
+  box-sizing: border-box;
 }
 
 .sidebar.active {
@@ -47,11 +50,12 @@ body {
 }
 
 
-.menu-links {
+.menu-links, .dashboard {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 
 .menu-links li a {
   display: block;
@@ -144,4 +148,26 @@ body {
 
 .card-btn:hover {
   background-color: #0056b3;
+}
+
+.logout-btn{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  padding: 15px 25px;
+  color: white;
+  background: none;
+  text-decoration: none;
+  text-align: left;
+  border-style: none;
+  font-size: 18px;
+  transition: 0.2s;
+  margin-top: auto;
+  width: 100%;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b; 
+    cursor: pointer;
 }
