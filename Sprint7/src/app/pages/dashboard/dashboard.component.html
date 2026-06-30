@@ -1,23 +1,25 @@
-<section class="car-container">
-  <div class="div-container">
-    <h2>Veículos</h2>
-    <select (change)="onCarChange($event)">
-      @for (carro of veiculos; track carro.id) {
-        <option [value]="carro.id">{{ carro.vehicle }}</option>
-      }
-    </select>
-  </div>
+<app-menu></app-menu>
+<section>
+    <div class="info-container">
+        <div class="select-container">
+            <h2>Veículos</h2>
+            <select id="select-btn" (change)="onCarChange($event)">
+                @for (carro of veiculos; track carro.id) {
+                <option [value]="carro.id">{{ carro.vehicle }}</option>
+                }
+            </select>
+        </div>
+        <app-cars-comparation  [titulo]="'Total de Vendas'" [valor]="VeiculoSelecionado?.volumetotal ?? 0"></app-cars-comparation>
+        <app-cars-comparation  [titulo]="'Connected'" [valor]="VeiculoSelecionado?.connected ?? 0"></app-cars-comparation>
+        <app-cars-comparation  [titulo]="'Upd. Softwares'" [valor]="VeiculoSelecionado?.softwareUpdates ?? 0"></app-cars-comparation>
+    </div>
 </section>
 
-<app-menu></app-menu>
-<app-cars-comparation [titulo]="'Total de Vendas'" [valor]="VeiculoSelecionado?.volumetotal ?? 0"></app-cars-comparation>
-<app-cars-comparation [titulo]="'Connected'"></app-cars-comparation>
-<app-cars-comparation [titulo]="'Upd. Softwares'"></app-cars-comparation>
 
 <section class="img-container">
   <img [src]="VeiculoSelecionado?.img" alt="Imagem do veículo">
 </section>
 
 <section class="info-container">
-    <app-tabela></app-tabela>
+    <app-tabela [vin]="VeiculoSelecionado?.vin ?? ''"></app-tabela>
 </section>

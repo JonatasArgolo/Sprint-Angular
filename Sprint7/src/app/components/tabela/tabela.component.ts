@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tabela',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './tabela.component.css'
 })
 export class TabelaComponent {
-
+  @Input() vin: string = ''
 }

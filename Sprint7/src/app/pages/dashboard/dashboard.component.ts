@@ -30,14 +30,19 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getCars().subscribe({
       error: () => {},
             next: (resposta: any) => {
-        const listaOriginal = resposta.vehicles as Veiculo[];
+        const listaOriginal = (resposta.vehicles || []) as any[];
 
        this.veiculos = listaOriginal.map(v => {
         const urlOriginal = v.img ?? '';
         const nomeArquivo = urlOriginal.substring(urlOriginal.lastIndexOf('/') + 1);
 
         return {
-          ...v,
+          id: v.id,
+          vehicle: v.vehicle,
+          volumetotal: v.volumetotal ?? 0,
+          connected: v.connected ?? 0,
+          softwareUpdates: v.softwareUpdates ?? 0, 
+          vin: v.vin ?? '',
           img: `./images/${nomeArquivo}`
         };
       });
