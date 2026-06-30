@@ -1,47 +1,23 @@
-<section>
-    <div>
-        <h2>Veiculos</h2>
-        <select>
-            <option value="">Territory</option>
-            <option value="">Mustang</option>
-            <option value="">Bronco</option>
-            <option value="">Ranger</option>
-        </select>
-    </div>
+<section class="car-container">
+  <div class="div-container">
+    <h2>Veículos</h2>
+    <select (change)="onCarChange($event)">
+      @for (carro of veiculos; track carro.id) {
+        <option [value]="carro.id">{{ carro.vehicle }}</option>
+      }
+    </select>
+  </div>
 </section>
 
-<app-cars-comparation></app-cars-comparation>
-<app-cars-comparation></app-cars-comparation>
-<app-cars-comparation></app-cars-comparation>
 <app-menu></app-menu>
+<app-cars-comparation [titulo]="'Total de Vendas'" [valor]="VeiculoSelecionado?.volumetotal ?? 0"></app-cars-comparation>
+<app-cars-comparation [titulo]="'Connected'"></app-cars-comparation>
+<app-cars-comparation [titulo]="'Upd. Softwares'"></app-cars-comparation>
 
-<section>
-    <img src="http://localhost:3001/territory.png">
+<section class="img-container">
+  <img [src]="VeiculoSelecionado?.img" alt="Imagem do veículo">
 </section>
 
-<section>
-    <table>
-        <thead>
-            <tr>
-                <th>VIN</th>
-                <th>ODOMETRO</th>
-                <th>NIVEL DE COMBUSTIVEL</th>
-                <th>STATUS</th>
-                <th>LAT</th>
-                <th>LONG</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <input type="text">
-                </td>
-                <td>23344</td>
-                <td>76%</td>
-                <td>ON</td>
-                <td>-12.2322</td>
-                <td>-35.2314</td>
-            </tr>
-        </tbody>
-    </table>
+<section class="info-container">
+    <app-tabela></app-tabela>
 </section>

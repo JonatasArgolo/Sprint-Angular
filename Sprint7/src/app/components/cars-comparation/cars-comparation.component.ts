@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cars-comparation',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './cars-comparation.component.css'
 })
 export class CarsComparationComponent {
-
+  @Input() titulo: string = ""
+  @Input() valor: number = 0
 }
