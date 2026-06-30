@@ -32,12 +32,15 @@ export class DashboardComponent implements OnInit {
             next: (resposta: any) => {
         const listaOriginal = resposta.vehicles as Veiculo[];
 
-        this.veiculos = listaOriginal.map(v => {
-          return {
-            ...v,
-            img: `./images/${v.vehicle.toLowerCase()}.png`
-          };
-        });
+       this.veiculos = listaOriginal.map(v => {
+        const urlOriginal = v.img ?? '';
+        const nomeArquivo = urlOriginal.substring(urlOriginal.lastIndexOf('/') + 1);
+
+        return {
+          ...v,
+          img: `./images/${nomeArquivo}`
+        };
+      });
 
         if (this.veiculos.length > 0) {
           this.VeiculoSelecionado = this.veiculos[0];
