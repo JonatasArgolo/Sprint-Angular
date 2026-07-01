@@ -2,6 +2,7 @@
         <thead>
             <tr>
                 <th>VIN</th>
+                <button (click)="getVin()">Search</button>
                 <th>ODOMETRO</th>
                 <th>NIVEL DE COMBUSTIVEL</th>
                 <th>STATUS</th>
@@ -14,11 +15,11 @@
                 <td>
                     <input type="text" placeholder="{{ vin }}" value="{{ vin }}">
                 </td>
-                <td>23344</td>
-                <td>76%</td>
-                <td>ON</td>
-                <td>-12.2322</td>
-                <td>-35.2314</td>
+                <td>{{ VinSelect?.odometro }}</td>
+                <td>{{ VinSelect?.nivelCombustivel }}%</td>
+                <td>{{ VinSelect?.status }}</td>
+                <td>{{ VinSelect?.lat }}</td>
+                <td>{{ VinSelect?.long }}</td>
             </tr>
         </tbody>
     </table>

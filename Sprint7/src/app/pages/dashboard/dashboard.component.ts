@@ -22,9 +22,8 @@ export class DashboardComponent implements OnInit {
     softwareUpdates: 0,
     vehicle: "",
     img: "",
-    vin: "",
+    vinCode: "",
 
-    
   }
   ngOnInit(){
     this.dashboardService.getCars().subscribe({
@@ -42,14 +41,14 @@ export class DashboardComponent implements OnInit {
           volumetotal: v.volumetotal ?? 0,
           connected: v.connected ?? 0,
           softwareUpdates: v.softwareUpdates ?? 0, 
-          vin: v.vin ?? '',
+          vinCode: v.vinCode ?? '',
           img: `./images/${nomeArquivo}`
         };
       });
+      if (this.veiculos.length > 0) {
+        this.VeiculoSelecionado = this.veiculos[0];
+      }
 
-        if (this.veiculos.length > 0) {
-          this.VeiculoSelecionado = this.veiculos[0];
-        }
       }
     })
   }
@@ -61,5 +60,6 @@ export class DashboardComponent implements OnInit {
   if (carroEncontrado) {
     this.VeiculoSelecionado = carroEncontrado;
   }
+  console.log("VEÍCULO SELECIONADO COMPLETO:", this.VeiculoSelecionado);
 }
 }

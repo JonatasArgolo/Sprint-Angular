@@ -1,9 +1,18 @@
-export type Veiculo ={
-    id : number
-    vehicle : string
+export type Veiculo = {
+    id: number
+    vehicle: string
     volumetotal: number
     connected: number
     softwareUpdates: number
-    vin: string
+    vinCode: string
     img: string
+}
+
+export type vin = {
+    id: number
+    odometro: number
+    nivelCombustivel: number
+    status: string 
+    lat: number
+    long: number
 }
